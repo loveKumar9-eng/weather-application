@@ -1,0 +1,231 @@
+body{
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start; /* Align content to the top */
+    align-items: flex-start; /* Align content to the top */
+    padding: 20px; /* Add padding around the body */
+    background-image: 
+        linear-gradient(
+            to bottom,
+            #dcdcdc 50%,
+            #e9e9e9 50%
+        );
+    font-family: sans-serif;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+/* Style Google Translate Widget */
+#google_translate_element {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px; /* Add spacing below the widget */
+    font-size: 14px;
+}
+
+/* Adjust form styling for layout continuity */
+main form {
+    margin-top: 0; /* Remove unnecessary margin caused by moving the widget */
+}
+
+main{
+    width: 100%; /* Make the container full width */
+    height: 100%; /* Make the container full height */
+    max-width: 1200px; /* Optional: Limit the maximum width */
+    margin: auto; /* Center the container horizontally */
+    min-height: 300px;
+    background-color: #f7f7f7;
+    border-radius: 30px;
+    box-shadow: 0 30px 50px #5553;
+    padding: 30px;
+    box-sizing: border-box;
+}
+main form {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    border: 1px solid #5552;
+    border-radius: 30px;
+    padding: 10px;
+    gap: 15px; /* Add spacing between input fields and button */
+}
+
+main form input, 
+main form button {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%; /* Ensure input fields and button fill their container */
+}
+
+main form button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f78a55;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+main form button i {
+    font-size: 1.5em;
+}
+main .result{
+    padding-top: 20px;
+    text-align: center;
+}
+main .result .name{
+    font-weight: bold;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+/* Date and Time Styling */
+.date-time {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.date-time p {
+    margin: 5px 0; /* Add spacing between lines */
+}
+
+main .temperature img{
+    width: 150px;
+    filter: drop-shadow(0 10px 50px #555);
+}
+main .temperature figcaption{
+    font-size: 5em;
+}
+main .description{
+    padding: 10px 0 30px;
+}
+main ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ensure equal column width */
+    gap: 15px; /* Add consistent spacing between items */
+}
+main li{
+    background-color: #091ec1;
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px 10px;
+    background-image: linear-gradient(
+        to bottom,
+        transparent 50%,
+        #0003 50%
+    );
+    font-weight: bold;
+    font-size: medium; /* Ensure consistent font size */
+    display: flex;
+    flex-direction: column; /* Align content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    height: 120px; /* Set uniform height for all items */
+}
+main ul li i{
+    font-size: 2em;
+    margin: 20px 0;
+    display: block!important;
+}
+main ul li span {
+    display: block; /* Ensure spans are stacked vertically */
+    text-align: center; /* Center-align text */
+}
+main li:nth-child(2){
+    background-color: #b56291;
+}
+main li:nth-child(3){
+    background-color: #48567b;
+}
+main li:nth-child(4){
+    background-color: #091ec1;
+}
+main li:nth-child(5){
+    background-color: #b56291;
+}
+main li:nth-child(6){
+    background-color: #48567b;
+}
+
+
+main.error{
+    animation: errorEffect 0.3s linear 1;
+}
+@keyframes errorEffect{
+    0%{
+        transform: translate(10px, 5px)
+    }
+    25%{
+        transform: translate(-5px, 0)
+    }
+    50%{
+        transform: translate(8px, 2px)
+    }
+    75%{
+        transform: translate(-2px, 5px)
+    }
+    100%{
+        transform: translate(0, 0); 
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        width: 100%; /* Full width for smaller screens */
+        padding: 20px; /* Adjust padding */
+        border-radius: 15px; /* Reduce border radius */
+    }
+
+    main form {
+        gap: 10px; /* Reduce spacing between form elements */
+    }
+
+    main ul {
+        grid-template-columns: repeat(2, 1fr); /* Adjust grid for smaller screens */
+        gap: 10px; /* Reduce gap between items */
+    }
+
+    main li {
+        height: 100px; /* Adjust height for smaller screens */
+        font-size: small; /* Reduce font size */
+    }
+
+    main .temperature img {
+        width: 100px; /* Reduce weather icon size */
+    }
+
+    main .temperature figcaption {
+        font-size: 3em; /* Adjust font size */
+    }
+
+    .date-time {
+        font-size: 18px; /* Adjust font size for date and time */
+    }
+}
+
+@media (max-width: 480px) {
+    main ul {
+        grid-template-columns: 1fr; /* Single column layout for very small screens */
+    }
+
+    main li {
+        height: auto; /* Allow flexible height */
+        padding: 15px; /* Adjust padding */
+    }
+
+    main form input, 
+    main form button {
+        font-size: 14px; /* Adjust font size for inputs and button */
+    }
+}

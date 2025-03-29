@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div id="google_translate_element"></div>
+        <form id="weatherForm">
+            <input type="text" id="name" autocomplete="off" placeholder="Enter city name" required>
+            
+          <!-- Email Input Box on a New Line -->
+<label for="email">Email Address:</label>
+<input type="email" id="email" placeholder="Enter email address" required>
+
+            
+            <button type="submit" aria-label="Search Weather">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
+         <!-- Display Date and Time -->
+          <div class="date-time">
+           <p id="current-date"></p>
+           <p id="current-time"></p>
+          </div>
+          
+
+        <div id="error-message" style="color: red; display: none;">Invalid input, please try again.</div>
+        <div id="loader" style="display: none;">
+            <i class="fa-solid fa-spinner fa-spin"></i> Loading...
+        </div>
+
+        <section class="result">
+            <figure class="name">
+                <figcaption>London</figcaption>
+                <img src="https://flagsapi.com/GB/shiny/32.png" alt="Country Flag">
+            </figure>
+            <figure class="temperature">
+                <img src="https://openweathermap.org/img/wn/10d@4x.png" alt="Weather Icon">
+                <figcaption>
+                    <span>31</span>
+                    <sup>o</sup>
+                </figcaption>
+            </figure>
+            <p class="description">overcast clouds</p>
+            <ul>
+                <li>
+                    <span>clouds</span>
+                    <i class="fa-solid fa-cloud"></i>
+                    <span id="clouds">98</span>%
+                </li>
+                <li>
+                    <span>humidity</span>
+                    <i class="fa-solid fa-droplet"></i>
+                    <span id="humidity">98</span>%
+                </li>
+                <li>
+                    <span>pressure</span>
+                    <i class="fa-solid fa-gauge"></i>
+                    <span id="pressure">1011</span> hPa
+                </li>
+                <li>
+                    <span>🌅 Sunrise</span>
+                    <span id="sunrise">6:30 AM</span>
+                </li>
+                <li>
+                    <span>🌇 Sunset</span>
+                    <span id="sunset">5:45 PM</span>
+                </li>
+                <li>
+                    <span>💨 Wind Speed</span>
+                    <span id="wind-speed">5 m/s</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                { pageLanguage: 'en' }, 
+                'google_translate_element'
+            );
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <script src="app.js"></script>
+</body>
+</html>
